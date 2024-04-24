@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/next_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -52,6 +53,13 @@ class _MyHomePageState extends State<MyHomePage> {
           return   Column(
             children:[
               ListTile(
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                    return NextPage(titleList[i]);
+                },
+                  ),
+                  );
+              },
                 leading: Icon(Icons.vpn_key),
                 title: Text(titleList[i]),
               ),
